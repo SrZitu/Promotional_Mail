@@ -69,8 +69,3 @@ Route::post('/promotional/mail', [PromotionController::class, 'promotionMailSend
     ->middleware([TokenVarificationMiddleware::class]);;
 
 
-Route::get('/mailtest', function () {
-    $subject = 'new bee coder';
-    $message = "my message";
-    Mail::to('zitu094@gmail.com')->send(new PromotionalEmail($subject, $message));
-});
